@@ -1,0 +1,8 @@
+en:
+  paysto:
+    check:
+      fail: 'Payment not found.'
+    callback:
+      fail: 'Payment not found.'
+    success: 'Payment successfully passed.'
+    fail: 'Sorry, but something went wrong. Please, try again later.'
