@@ -3,6 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/fbandrey/paysto-rails/badges/gpa.svg)](https://codeclimate.com/github/fbandrey/paysto-rails)
 [![Dependency Status](https://gemnasium.com/fbandrey/paysto-rails.svg)](https://gemnasium.com/fbandrey/paysto-rails)
 [![security](https://hakiri.io/github/fbandrey/paysto-rails/master.svg)](https://hakiri.io/github/fbandrey/paysto-rails/master)
+[![Inline docs](http://inch-ci.org/github/fbandrey/paysto-rails.png?branch=master)](http://inch-ci.org/github/fbandrey/paysto-rails)
 
 This is first implementation for passing payments through [Paysto](https://paysto.com) gateway.
 
