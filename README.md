@@ -2,6 +2,7 @@
 [![Gem Version](https://badge.fury.io/rb/paysto-rails.svg)](http://badge.fury.io/rb/paysto-rails)
 [![Code Climate](https://codeclimate.com/github/fbandrey/paysto-rails/badges/gpa.svg)](https://codeclimate.com/github/fbandrey/paysto-rails)
 [![Dependency Status](https://gemnasium.com/fbandrey/paysto-rails.svg)](https://gemnasium.com/fbandrey/paysto-rails)
+[![security](https://hakiri.io/github/fbandrey/paysto-rails/master.svg)](https://hakiri.io/github/fbandrey/paysto-rails/master)
 
 This is first implementation for passing payments through [Paysto](https://paysto.com) gateway.
 
