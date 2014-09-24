@@ -5,9 +5,7 @@
 [![security](https://hakiri.io/github/fbandrey/paysto-rails/master.svg)](https://hakiri.io/github/fbandrey/paysto-rails/master)
 [![Inline docs](http://inch-ci.org/github/fbandrey/paysto-rails.png?branch=master)](http://inch-ci.org/github/fbandrey/paysto-rails)
 
-This is first implementation for passing payments through [Paysto](https://paysto.com) gateway.
-
-It works only with «[onlineMerchant](https://paysto.com/ru/products/onlineMerchant)», if you know what I mean. :)
+This is first implementation for passing payments through [Paysto](https://paysto.com) gateway. It works only with «[onlineMerchant](https://paysto.com/ru/products/onlineMerchant)».
 
 ## Installation
 
@@ -67,35 +65,33 @@ In the simple case only what you should to do:
 
 That's all.
 
-Now you may customize models as you want, associate it with users or anything else...
-
-For more information check [payment workflow](https://github.com/fbandrey/paysto-rails/wiki/Payment-workflow) wiki.
-
 ## Usage
 
-You have 3 models and 1 controller now if you did everything right before. Check models and extend them with logic and associations, which you need in your application.
+You have 3 models and 1 controller now if you did everything right before. Check models and extend them with logic or associations, which you need in your application.
 
-Controller by default [extended with concern](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb) and looks so:
+Controller by default [extended with concern](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb) and contains all necessary methods:
 ```
 class PaystoController < ApplicationController
   include Paysto::Controller
 end
 ```
-But you may override methods here as you want. For example, if I want to redirect user to "/payments" URL when payment is passed:
+But you may override methods as you want. For example, if you want to redirect user to custom URL when payment is passed:
 ```
 class PaystoController < ApplicationController
   include Paysto::Controller
   
   def success
     flash[:success] = I18n.t('paysto.success')
-    redirect_to custom_payments_path
+    redirect_to any_custom_payments_path
   end
 end
 ```
 
-Also you can customize [check](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L9) or [callback](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L18) methods using Paysto module as you want, but we don't recommend it, do it only if you know what's going on there.
+Also you can customize [check](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L9) or [callback](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L18) methods using Paysto module as you want, but do it only if you know what's going on there.
 
-### Paysto methods
+Check [payment workflow](https://github.com/fbandrey/paysto-rails/wiki/Payment-workflow) wiki for more information.
+
+#### Paysto methods
 
 ```Paysto.balance``` – current balance in Paysto.
 
@@ -111,7 +107,7 @@ Also you can customize [check](https://github.com/fbandrey/paysto-rails/blob/mas
 
 ```Paysto.md5_valid?(params)``` – check whether the MD5 sign is valid.
 
-```Paysto.pay_till``` – timestamp string in Paysto format.
+```Paysto.pay_till``` – timestamp string for payment expiration in Paysto format.
 
 ```Paysto.real_amount(amount)``` – real income amount without Paysto tax.
 
