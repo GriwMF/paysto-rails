@@ -87,7 +87,7 @@ class PaystoController < ApplicationController
 end
 ```
 
-Also you can customize [check](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L9) or [callback](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L18) methods using Paysto module as you want, but do it only if you know what's going on there.
+Also you can customize [check](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L12) or [callback](https://github.com/fbandrey/paysto-rails/blob/master/lib/paysto/controller.rb#L23) methods using Paysto module as you want, but do it only if you know what's going on there.
 
 Check [payment workflow](https://github.com/fbandrey/paysto-rails/wiki/Payment-workflow) wiki for more information.
 
