@@ -1,5 +1,6 @@
 module Paysto
   require 'csv'
+  require 'net/http'
 
   mattr_accessor  :id,
                   :secret,
