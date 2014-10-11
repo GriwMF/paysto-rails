@@ -7,6 +7,8 @@
 
 This is first implementation for passing payments through [Paysto](https://paysto.com) gateway. It works only with «[onlineMerchant](https://paysto.com/ru/products/onlineMerchant)».
 
+Check demo shop in action: [www.paysto.tk](http://www.paysto.tk/). And source code [here](http://github.com/fbandrey/paysto-demo).
+
 ## Installation
 
 Add this line to your application's Gemfile:
