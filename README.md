@@ -1,4 +1,5 @@
-# «paysto-rails»
+![paysto-rails logo](https://raw.github.com/fbandrey/paysto-rails/master/paysto-rails.png)
+
 [![Gem Version](https://badge.fury.io/rb/paysto-rails.svg)](http://badge.fury.io/rb/paysto-rails)
 [![Code Climate](https://codeclimate.com/github/fbandrey/paysto-rails/badges/gpa.svg)](https://codeclimate.com/github/fbandrey/paysto-rails)
 [![Dependency Status](https://gemnasium.com/fbandrey/paysto-rails.svg)](https://gemnasium.com/fbandrey/paysto-rails)
