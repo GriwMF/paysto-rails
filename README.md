@@ -6,7 +6,7 @@
 [![security](https://hakiri.io/github/fbandrey/paysto-rails/master.svg)](https://hakiri.io/github/fbandrey/paysto-rails/master)
 [![Inline docs](http://inch-ci.org/github/fbandrey/paysto-rails.png?branch=master)](http://inch-ci.org/github/fbandrey/paysto-rails)
 
-This is first implementation for passing payments through [Paysto](https://paysto.com) gateway. It works only with «[onlineMerchant](https://paysto.com/ru/products/onlineMerchant)».
+This is quick implementation for passing payments through [Paysto](https://paysto.com) gateway. It works only with «[onlineMerchant](https://paysto.com/ru/products/onlineMerchant)». Your PRs are welcome.
 
 Check demo shop in action: [www.paysto.tk](http://www.paysto.tk/). And source code [here](http://github.com/fbandrey/paysto-demo).
 
