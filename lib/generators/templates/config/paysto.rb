@@ -19,7 +19,10 @@ Paysto.setup do |config|
     '66.226.74.225',
     '66.226.74.226',
     '66.226.74.227',
-    '66.226.74.228'
+    '66.226.74.228',
+    '23.102.21.72',
+    '23.102.17.162',
+    '137.135.207.41'
   ]
 
   # === Payments tax of your tariff plan in Paysto. Default onlineMerchant "All inclusive" is 5%.
