@@ -14,6 +14,8 @@ module Paysto
                   :invoice_class_name,
                   :invoice_notification_class_name
 
+  RXP = Regexp.new('[^a-zA-Z0-9$&%;:?!\.,\s}(\[){\]"\'`\\/|^_~*+=<>@-]+')
+
   class << self
 
     # Configuring module.
@@ -65,7 +67,7 @@ module Paysto
     def get_payment_type(invoice_id, time = Time.zone.now)
       _payments = get_payments(time.utc - 30.minutes, time.utc + 5.minutes)
       if _payments.present?
-        p = _payments.select{|_p| _p[2].eql?(invoice_id.to_s)}.first
+        p = _payments.select{ |_p| _p[2].eql?(invoice_id.to_s) }.first
         _type = p[7] if p
       end
       _type || 'common'
@@ -83,8 +85,8 @@ module Paysto
 
     # Check whether the MD5 sign is valid.
     def md5_valid?(p)
-      except_keys = ['action', 'controller', 'PAYSTO_MD5']
-      generate_md5(p.reject{|k,v| except_keys.include?(k)}) == p['PAYSTO_MD5']
+      hash = p.except('action', 'controller', 'PAYSTO_MD5')
+      generate_md5(hash) == p['PAYSTO_MD5']
     end
 
     # Timestamp string in Paysto format for payments expiration.
@@ -105,9 +107,15 @@ module Paysto
 
     # Generating MD5 sign according with received params.
     def generate_md5(p = {}, upcase = true)
-      hash_str = p.to_a.sort_by{|pair| pair.first.downcase}.map{|pair| pair.join('=')}.join('&')
-      md5 = Digest::MD5.hexdigest("#{hash_str}&#{@@secret}")
+      md5 = Digest::MD5.hexdigest(md5_string(p))
       upcase ? md5.upcase : md5
+    end
+
+    # Final data string to gererane MD5.
+    def md5_string(p = {})
+      str = p.to_a.sort_by{ |pair| pair.first.downcase }.map{ |pair| pair.join('=') }.join('&')
+      str_with_secret = [str, @@secret].join('&')
+      str_with_secret.gsub(RXP, '')
     end
 
     # Base set of params for requests.

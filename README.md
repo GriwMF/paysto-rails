@@ -8,7 +8,7 @@
 
 This is quick implementation for passing payments through [Paysto](https://paysto.com) gateway. It works only with «[onlineMerchant](https://paysto.com/ru/products/onlineMerchant)». Your PRs are welcome.
 
-Check demo shop in action: [www.paysto.tk](http://www.paysto.tk/). And source code [here](http://github.com/fbandrey/paysto-demo).
+Check demo shop in action: [ror.paysto.in](https://ror.paysto.in/). And source code [here](https://github.com/fbandrey/paysto-demo).
 
 ## Installation
 
@@ -82,7 +82,7 @@ But you may override methods as you want. For example, if you want to redirect u
 ```
 class PaystoController < ApplicationController
   include Paysto::Controller
-  
+
   def success
     flash[:success] = I18n.t('paysto.success')
     redirect_to any_custom_payments_path
