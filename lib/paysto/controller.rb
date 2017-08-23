@@ -4,7 +4,7 @@ module Paysto
 
     included do
       # Some callbacks does not requires verifications.
-      skip_before_filter :verify_authenticity_token, only: [:callback, :check]
+      skip_before_filter :verify_authenticity_token, only: [:callback, :check], raise: false
     end
 
     # First step of payment workflow: Invoice, IP and MD5 verification.
